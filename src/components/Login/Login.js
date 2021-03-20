@@ -29,7 +29,7 @@ const Login = () => {
         error: "",
         success: false,
     });
-    console.log(user);
+    // console.log(user);
 
     const handleBlur = (event) => {
         let isFieldValid = true;
@@ -63,8 +63,8 @@ const Login = () => {
                     newUserInfo.error = errorMessage;
                     newUserInfo.success = true;
                     setUser(newUserInfo);
-                    console.log(errorMessage);
-                    console.log(user.name);
+                    // console.log(errorMessage);
+                    // console.log(user.name);
                     updateUserName(user.name);
                     setLoggedInUser(newUserInfo);
                     history.replace(from);
@@ -119,35 +119,37 @@ const Login = () => {
                 console.log(error);
             });
     };
-    console.log(user.displayName);
+    // console.log(user.displayName);
 
+
+       // for google signIn
     const googleProvider = new firebase.auth.GoogleAuthProvider();
-    const fbProvider = new firebase.auth.FacebookAuthProvider();
-
-    // for google signIn
     const googleSignIn = () => {
         firebase
             .auth()
             .signInWithPopup(googleProvider)
             .then((res) => {
-                console.log(res);
-                console.log(res.user);
+                // console.log(res);
+                console.log(res[0]);
                 const { displayName, email, photoURL } = res.user;
-                console.log(displayName, email, photoURL);
+                // console.log(displayName, email, photoURL);
 
                 const signedInUser = {
                     isSignedIn: true,
                     displayName: displayName,
                     email: email,
                     photoURL: photoURL,
+
                 };
                 setUser(signedInUser);
                 setLoggedInUser(signedInUser);
                 history.replace(from);
-            });
+            }).catch(error => {
+                console.log(error)
+            })
     };
 
-    console.log(user);
+    // console.log(user);
     return (
         <div>
             <div class="d-flex justify-content-center">

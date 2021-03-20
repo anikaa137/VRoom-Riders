@@ -6,7 +6,7 @@ const Header = () => {
     console.log(loggedInUser);
 
     return (
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light ">
             <div class="container-fluid">
                 <Link
                     to="/home"

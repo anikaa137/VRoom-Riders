@@ -1,5 +1,6 @@
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
+import "./App.css"
 import {
     BrowserRouter as Router,
     Switch,
