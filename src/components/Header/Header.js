@@ -6,7 +6,8 @@ const Header = () => {
     console.log(loggedInUser);
 
     return (
-        <nav class="navbar navbar-expand-lg navbar-light ">
+        <div className="header">
+            <nav class="navbar navbar-expand-lg navbar-light ">
             <div class="container-fluid">
                 <Link
                     to="/home"
@@ -47,7 +48,7 @@ const Header = () => {
                         </Link>
 
                         {loggedInUser.email ? (
-                            <h5>{loggedInUser.displayName}</h5>
+                            <h5>{loggedInUser.email}</h5>
                         ) : (
                             <Link
                                 to="/login"
@@ -67,6 +68,7 @@ const Header = () => {
                 </div>
             </div>
         </nav>
+        </div>
     );
 };
 
