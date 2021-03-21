@@ -121,8 +121,7 @@ const Login = () => {
     };
     // console.log(user.displayName);
 
-
-       // for google signIn
+    // for google signIn
     const googleProvider = new firebase.auth.GoogleAuthProvider();
     const googleSignIn = () => {
         firebase
@@ -139,14 +138,14 @@ const Login = () => {
                     displayName: displayName,
                     email: email,
                     photoURL: photoURL,
-
                 };
                 setUser(signedInUser);
                 setLoggedInUser(signedInUser);
                 history.replace(from);
-            }).catch(error => {
-                console.log(error)
             })
+            .catch((error) => {
+                console.log(error);
+            });
     };
 
     // console.log(user);
